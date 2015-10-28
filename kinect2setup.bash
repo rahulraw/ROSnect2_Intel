@@ -35,7 +35,7 @@ sudo cp libfreenect2/rules/90-kinect2.rules /etc/udev/rules.d/
 mkdir catkin_ws && cd catkin_ws
 mkdir src && cd src
 catkin_init_workspace
-git clone https://github.com/code-iai/iai_kinect2.giti
+git clone https://github.com/code-iai/iai_kinect2.git
 cd iai_kinect2
 rosdep install -r --from-paths .
 cd ~/catkin_ws
