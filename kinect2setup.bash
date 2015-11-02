@@ -42,6 +42,10 @@ rosdep install -r --from-paths .
 cd ~/catkin_ws
 catkin_make -DCMAKE_BUILD_TYPE="Release"
 
+# Source Files for rosrun iai_kinect
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+. ~/.bashrc
+
 # Run Iai_kinect2 on startup
 sudo apt-get install ros-indigo-robot-upstart -y
 cd
@@ -49,6 +53,5 @@ cd catkin_ws/src/iai_kinect2/
 rosrun robot_upstart install kinect2_bridge/launch/
 sudo sed -i '/^exit 0/isudo chmod 666 /dev/dri/*' /etc/rc.local
 
-# Source Files for rosrun iai_kinect
-echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-. ~/.bashrc 	
+# Source bashrc final time
+. ~/.bashrc
