@@ -19,6 +19,7 @@ sudo dpkg -i libglfw3*_3.0.4-1_*.deb #Ubuntu 14.04 only
 # Install Beignet
 sudo add-apt-repository ppa:pmjdebruijn/beignet-testing
 sudo apt-get install beignet-dev
+sudo apt-get install beignet-opencl-icd
 
 # Make Libfreenect2
 cd ~/libfreenect2
@@ -43,6 +44,7 @@ catkin_make -DCMAKE_BUILD_TYPE="Release"
 
 # Run Iai_kinect2 on startup
 sudo apt-get install ros-indigo-robot-upstart -y
+cd
 cd catkin_ws/src/iai_kinect2/
 rosrun robot_upstart install kinect2_bridge/launch/
 sudo sed -i '/^exit 0/isudo chmod 666 /dev/dri/*' /etc/rc.local
