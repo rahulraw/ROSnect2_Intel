@@ -51,7 +51,7 @@ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 sudo apt-get install ros-indigo-robot-upstart -y
 cd
 cd catkin_ws/src/iai_kinect2/
-rosrun robot_upstart install kinect2_bridge/launch/
+rosrun robot_upstart install --master http://c1:11311 kinect2_bridge/launch/
 sudo sed -i '/^exit 0/isudo chmod 666 /dev/dri/*' /etc/rc.local
 
 # Source bashrc final time
